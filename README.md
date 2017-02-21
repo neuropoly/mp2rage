@@ -8,24 +8,18 @@ Installation instructions
 These scripts works with Python 2.7.
 
 Beforehand, you need to install some python libraries if you do not have them yet:
-- PyMRT (https://pypi.python.org/pypi/pymrt) running in a terminal window the following command (you might need the administrator privileges, for this, just add "sudo" at the beginning of the following command):
-~~~
-	pip install pymrt
-~~~
-	
+- numpy: http://www.numpy.org/
 - matplotlib running in a terminal window the following command:
 ~~~
 	pip install matplolib
 ~~~
-	
-- numpy running in a terminal window the following command:
-~~~
-	pip install numpy
-~~~
-	
 - nibabel running in a terminal window the following command:
 ~~~	
 	pip install nibabel
+~~~
+- PyMRT (https://pypi.python.org/pypi/pymrt) running in a terminal window the following command (you might need the administrator privileges, for this, just add "sudo" at the beginning of the following command):
+~~~
+	pip install pymrt
 ~~~
 
 Then, you need to replace the 5 following scripts in your PyMRT installation folder by the scripts given in this repository: **utils.py**, **computation.py**, **__init__.py**, **naming.py** and **sequences/mp2rage.py**. To do so:
