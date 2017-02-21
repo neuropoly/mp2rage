@@ -13,15 +13,7 @@ Beforehand, you need to install:
     pip install pymrt
 
 
-Then, you need to replace the 5 following scripts in your PyMRT installation folder by the scripts given in this repository:
-    
-    utils.py 
-    computation.py           
-    __init__.py
-    naming.py
-    sequences/mp2rage.py
-    
-To do so:
+Then, you need to replace the 5 following scripts in your PyMRT installation folder by the scripts given in this repository: **utils.py**, **computation.py**, **__init__.py**, **naming.py** and **sequences/mp2rage.py**. To do so:
 
     - go into the PyMRT installation folder: `spinalcordtoolbox/python/lib/python2.7/site-packages/pymrt/`
     - copy the following scripts from this Github repository:
@@ -32,7 +24,7 @@ To do so:
 	naming.py                    AND PASTE IT IN         ./
 	sequences/mp2rage.py         AND PASTE IT IN         ./sequence/
 	
-The main script to compute T1 maps from the UNI MP2RAGE image is named `mp2rage_compute_t1_map.py`. If you want to be able to run it from any folder (in your Terminal window), please add the folder including this script (`mp2rage"` git directory) to your `.bash_profile`. To do so:
+The main script to compute T1 maps from the UNI MP2RAGE image is named `mp2rage_compute_t1_map.py`. If you want to be able to run it from any folder (in your Terminal window), please add the folder including this script (`mp2rage` git directory) to your `.bash_profile`. To do so:
 
     - open a Terminal window
     - to go to your home directory, type: cd
