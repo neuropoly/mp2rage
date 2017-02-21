@@ -13,12 +13,11 @@
 from __future__ import (division, absolute_import, print_function, unicode_literals)
 from fractions import Fraction
 
-from msct_parser import Parser
-from msct_image import Image
-import sys
-import sct_utils as sct
+from parser import Parser, printv
 import pymrt.computation as pmc
 from pymrt.sequences import mp2rage
+import nibabel as nib
+import sys
 
 
 class Param:
@@ -71,7 +70,7 @@ class AcqParam(object):
     def update(self, param_user):
         # list_params = seq_param_user.split(':')
         if len(param_user) < 2:
-            sct.printv('Please check parameter -param.', 1, type='error')
+            printv('Please check parameter -param.', 1, type='error')
         list_key_val = param_user.split('=')
         if type(getattr(self, list_key_val[0])) == tuple:
             # get type of the param
@@ -107,13 +106,7 @@ def main():
 
 
     # Load data
-    rho = Image(rho_fname)
-
-    # Output initialization
-    T1map = rho.copy()
-    T1map.setFileName(output_fname[0])
-    RHOmap_out = rho.copy()
-    RHOmap_out.setFileName(output_fname[1])
+    rho = nib.load(rho_fname)
 
     # Define acquisition params
     # acq_params = dict(
@@ -143,15 +136,17 @@ def main():
 
     # Compute T1 map
     # T1map.data = t1_mp2rage(t1_value_range=(100, 1500), rho_arr=T1w.data, **seq_param_kws)
-    T1map.data, RHOmap_out.data = pmc.t1_mp2rage(rho_arr=rho.data, t1_value_range=t1range, **acq_params)
+    T1map_data, RHOmap_out_data = pmc.t1_mp2rage(rho_arr=rho.get_data(), t1_value_range=t1range, **acq_params)
 
     # Output T1 map
-    T1map.save()
-    RHOmap_out.save()
+    T1map = nib.Nifti1Image(T1map_data, rho.affine, rho.header)
+    T1map.to_filename(output_fname[0])
+    RHOmap_out = nib.Nifti1Image(RHOmap_out_data, rho.affine, rho.header)
+    RHOmap_out.to_filename(output_fname[1])
 
     # To view results
-    sct.printv('\nDone! To view results, type:', verbose)
-    sct.printv('fslview '+T1map.file_name+' '+RHOmap_out.file_name+' &\n', verbose, 'info')
+    printv('\nDone! To view results, type:', verbose)
+    printv('fslview '+output_fname[0]+' '+output_fname[1]+' &\n', verbose, 'info')
 
 
 # ==========================================================================================
