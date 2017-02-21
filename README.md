@@ -5,24 +5,39 @@ Scripts to compute T1 maps from MP2RAGE images.
 -------------------------
 Installation instructions
 -------------------------
+These scripts works with Python 2.7.
 
-Beforehand, you need to install:
-
-    - the SpinalCordToolbox (https://sourceforge.net/p/spinalcordtoolbox/wiki/install_from_package/)
-	- the library PyMRT (https://pypi.python.org/pypi/pymrt) with the SpinalCordToolbox python (spinalcordtoolbox/python/bin/python) running in a terminal window the following command (you might need the administrator privileges, for this, just add "sudo" at the beginning of the following command):
-    pip install pymrt
-
+Beforehand, you need to install some python libraries if you do not have them yet:
+- PyMRT (https://pypi.python.org/pypi/pymrt) running in a terminal window the following command (you might need the administrator privileges, for this, just add "sudo" at the beginning of the following command):
+~~~
+	pip install pymrt
+~~~
+	
+- matplotlib running in a terminal window the following command:
+~~~
+	pip install matplolib
+~~~
+	
+- numpy running in a terminal window the following command:
+~~~
+	pip install numpy
+~~~
+	
+- nibabel running in a terminal window the following command:
+~~~	
+	pip install nibabel
+~~~
 
 Then, you need to replace the 5 following scripts in your PyMRT installation folder by the scripts given in this repository: **utils.py**, **computation.py**, **__init__.py**, **naming.py** and **sequences/mp2rage.py**. To do so:
 
-    - go into the PyMRT installation folder: `spinalcordtoolbox/python/lib/python2.7/site-packages/pymrt/`
+    - go to the folder where PyMRT package was installed (to find the path to this folder, type in a Terminal window: python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
     - copy the following scripts from this Github repository:
 	
-	utils.py                     AND PASTE IT IN         ./
-	computation.py               AND PASTE IT IN         ./
-	__init__.py                  AND PASTE IT IN         ./
-	naming.py                    AND PASTE IT IN         ./
-	sequences/mp2rage.py         AND PASTE IT IN         ./sequence/
+	utils.py                     AND PASTE IT IN         ./pymrt/
+	computation.py               AND PASTE IT IN         ./pymrt/
+	__init__.py                  AND PASTE IT IN         ./pymrt/
+	naming.py                    AND PASTE IT IN         ./pymrt/
+	sequences/mp2rage.py         AND PASTE IT IN         ./pymrt/sequence/
 	
 The main script to compute T1 maps from the UNI MP2RAGE image is named `mp2rage_compute_t1_map.py`. If you want to be able to run it from any folder (in your Terminal window), please add the folder including this script (`mp2rage` git directory) to your `.bash_profile`. To do so:
 
