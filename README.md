@@ -7,21 +7,14 @@ Installation instructions
 -------------------------
 These scripts works with Python 2.7.
 
-Beforehand, you need to install some python libraries if you do not have them yet:
-- numpy: http://www.numpy.org/
-- matplotlib running in a terminal window the following command:
+**STEP 1** : Install anaconda environment: https://www.continuum.io/downloads
+
+**STEP 2** : Install pymrt:
 ~~~
-	pip install matplolib
-~~~
-- nibabel running in a terminal window the following command:
-~~~	
-	pip install nibabel
-~~~
-- PyMRT (https://pypi.python.org/pypi/pymrt) running in a terminal window the following command (you might need the administrator privileges, for this, just add "sudo" at the beginning of the following command):
-~~~
-	pip install pymrt
+pip install pymrt==0.0.1.3
 ~~~
 
+**STEP 3** : 
 Then, you need to replace the 5 following scripts in your PyMRT installation folder by the scripts given in this repository: **utils.py**, **computation.py**, **__init__.py**, **naming.py** and **sequences/mp2rage.py**. To do so:
 
     - go to the folder where PyMRT package was installed (to find the path to this folder, type in a Terminal window: python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
@@ -32,7 +25,8 @@ Then, you need to replace the 5 following scripts in your PyMRT installation fol
 	__init__.py                  AND PASTE IT IN         ./pymrt/
 	naming.py                    AND PASTE IT IN         ./pymrt/
 	sequences/mp2rage.py         AND PASTE IT IN         ./pymrt/sequence/
-	
+
+**STEP 4** :
 The main script to compute T1 maps from the UNI MP2RAGE image is named `mp2rage_compute_t1_map.py`. If you want to be able to run it from any folder (in your Terminal window), please add the folder including this script (`mp2rage` git directory) to your `.bash_profile`. To do so:
 
     - open a Terminal window
@@ -44,6 +38,8 @@ The main script to compute T1 maps from the UNI MP2RAGE image is named `mp2rage_
     - to save and quit, press keys: ":", "w", "q", "ENTER". 
     - open a new Terminal window to load your new .bash_profile
 
+**NOTE :** 
+Make sure you always have both mp2rage_compute_t1_map.py & parser.py in the same folder.
 
 -----
 Usage
