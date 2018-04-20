@@ -56,7 +56,7 @@ If you experience any issue or would like additional help, please post an issue 
 
 ## Authors
 
-Simon Lévy, Julien Cohen-Adad
+Simon Lévy, Riccardo Metere, Julien Cohen-Adad
 
 ## Copyright
 
