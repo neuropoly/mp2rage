@@ -53,7 +53,8 @@ mp2rage_compute_t1_map.py -i uni.nii.gz -acqparam ti=700,1500:alpha=7,5:tr_seq=4
 ~~~
 
 Note on some parameters:
-- tr_gre: Look for the string `RepetitionTimeBlock::ms` in the Dicom file. This value should be equivalent to the echo spacing (check from the protocol pdf or directly from the console).
+- **tr_gre**: Look for the string `RepetitionTimeBlock::ms` in the Dicom file. This value should be equivalent to the echo spacing (check from the protocol pdf or directly from the console).
+- **slices per slab**: get this info directly from the Dicom data or from the protocol pdf.
 
 If you experience any issue or would like additional help, please post an issue [there](https://github.com/neuropoly/mp2rage/issues).
 
