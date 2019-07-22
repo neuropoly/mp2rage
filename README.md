@@ -52,6 +52,9 @@ Here is an example of a command to run the script and compute the T1 map from th
 mp2rage_compute_t1_map.py -i uni.nii.gz -acqparam ti=700,1500:alpha=7,5:tr_seq=4000:tr_gre=2.84:matrix_sizes=184,184,160:bandwidths=750,750:part_fourier_factors=1.0,6/8,1.0:grappa_refs=0,32,0:grappa_factors=1,2,1 -t1range 100,3000 -o T1map.nii.gz,RHOmap.nii.gz
 ~~~
 
+Note on some parameters:
+- tr_gre: Look for the string `RepetitionTimeBlock::ms` in the Dicom file. This value should be equivalent to the echo spacing (check from the protocol pdf or directly from the console).
+
 If you experience any issue or would like additional help, please post an issue [there](https://github.com/neuropoly/mp2rage/issues).
 
 ## Authors
