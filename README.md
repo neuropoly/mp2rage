@@ -1,3 +1,7 @@
+| :warning:  This repository is no more maintained. The MP2RAGE analysis feature is now available and maintained in [qMRLab](https://qmrlab.readthedocs.io/en/master/mp2rage_batch.html?highlight=mp2rage).
+|-----------------------------------------|
+
+
 # T1 mapping with MP2RAGE sequence
 
 Scripts to compute T1 maps from MP2RAGE data. This code is based on the excellent [PyMRT library](https://pypi.org/project/pymrt/). Note that the output T1 map is slightly different than that from the Siemens MP2RAGE sequence due to the different way of processing the data. More extensive comparison is ongoing. Please contact the authors for more info.
@@ -6,7 +10,7 @@ Scripts to compute T1 maps from MP2RAGE data. This code is based on the excellen
 
 These scripts work with Python 2.7.
 
-**STEP 1** : Install anaconda environment: https://www.continuum.io/downloads
+**STEP 1** : Install anaconda environment: https://www.anaconda.com/
 
 **STEP 2** : Install pymrt:
 ~~~
